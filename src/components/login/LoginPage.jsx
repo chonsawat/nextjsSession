@@ -21,18 +21,21 @@ export const LoginPage = () => {
   return (
     <div>
       <h2 className="font-bold text-2xl">LoginPage</h2>
+      
       <button
         onClick={onClickHander}
         className="bg-cyan-600 rounded font-semibold hover:bg-transparent hover:border hover:border-cyan-500 hover:text-cyan-500 py-4 px-6 mt-10"
       >
         Click Me to Login
       </button>
+
       <button
         onClick={onClickLogoutHander}
         className="mx-5 bg-red-600 rounded font-semibold hover:bg-transparent hover:border hover:border-red-500 hover:text-red-500 py-4 px-6 mt-10"
       >
         Logout
       </button>
+
     </div>
   );
 };

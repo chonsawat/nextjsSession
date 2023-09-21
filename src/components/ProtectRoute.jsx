@@ -11,19 +11,19 @@ const ProtectRoute = (props) => {
 
   useEffect(() => {
     const auth_token = Cookies.get("auth");
+
     if (auth_token) {
       const { name, role } = jwt.verify(
         auth_token,
         process.env.NEXT_PUBLIC_JWT_SECRET
       );
+
       setUser({
         name,
         role,
       });
     }
   }, []);
-
-  console.log("asdasdasd");
 
   return (
     <>
@@ -32,7 +32,7 @@ const ProtectRoute = (props) => {
           this is protected with role:{" "}
           {user?.role === "Admin" ? "Admin" : "User"}
         </p>
-        {user ? (
+        {user?.role === "Admin" ? (
           <>
             <SettingPage />
           </>
